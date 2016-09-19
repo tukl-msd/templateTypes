@@ -7,17 +7,17 @@ using namespace std;
 int main()
 {
     //Test initializations
-    baseType a(5);
-    baseType z;
+    baseType<uint64_t> a(5);
+    baseType<uint64_t> z;
     z = a;
     z = 5;
-    baseType b(a);
+    baseType<uint64_t> b(a);
 
     // Test Addition and Substraction:
-    baseType c;
+    baseType<uint64_t> c;
     c = a + b + 5;
     assert(c.value() == 15);
-    baseType d;
+    baseType<uint64_t> d;
     d = c - a - 5;
     assert(d.value() == 5);
     d = 5 - a;
@@ -26,6 +26,12 @@ int main()
     d += 1;
     assert(d.value() == 6);
     d -= 1;
+    assert(d.value() == 5);
+    d--;
+    --d;
+    assert(d.value() == 3);
+    d++;
+    ++d;
     assert(d.value() == 5);
 
     // Test Division and Multiplication:
