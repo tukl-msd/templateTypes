@@ -1,10 +1,12 @@
 #include <iostream>
 #include <assert.h>
+
 #include "basetype.h"
+#include "bittype.h"
 
 using namespace std;
 
-int main()
+void testBaseType()
 {
     //Test initializations
     baseType<uint64_t> a(5);
@@ -76,9 +78,34 @@ int main()
     assert(b <= b);
     assert(b >= b);
     assert(b != c);
+}
 
+void testBitType()
+{
+    std::cout << "foo: " << std::to_string(static_cast<uint64_t>(2)<<10) << std::endl;
+    bitType a(128);
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+    a *= 8;
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+    a *= 1024;
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+    a *= 1024;
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+    a *= 1024;
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+    a *= 8;
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+    a *= 1024;
+    std::cout << a << " (" << a.toByte() << ")" << endl;
+}
 
+int main()
+{
+    testBaseType();
+    testBitType();
     std::cout<< "All tests passed" << std::endl;
 }
+
+
 
 

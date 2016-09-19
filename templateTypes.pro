@@ -11,7 +11,8 @@ TEMPLATE = app
 
 SOURCES += main.cpp
 
-HEADERS += basetype.h
+HEADERS += basetype.h \
+    bittype.h
 
 #QMAKE_CXXFLAGS += -fprofile-instr-generate -fcoverage-mapping
 #QMAKE_LFLAGS +=  -fprofile-instr-generate -fcoverage-mapping
