@@ -8,4 +8,4 @@ rm -f *.html > /dev/null;
 make > /dev/null;
 ./templateTypes;
 
-/usr/local/bin/gcovr -r . --html --html-details -o coverage.html -d;
+/usr/local/bin/gcovr -r . -b --html --html-details -o coverage.html -d;
