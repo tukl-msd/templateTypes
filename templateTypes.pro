@@ -52,3 +52,7 @@ macx{
     QMAKE_CXXFLAGS +=  -fprofile-arcs -ftest-coverage -fPIC -O0
     QMAKE_LFLAGS +=  -fprofile-arcs -ftest-coverage -fPIC -O0
 }
+
+OTHER_FILES += getCov.sh
+OTHER_FILES += getCovMac.sh
+
