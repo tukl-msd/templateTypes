@@ -40,7 +40,8 @@ TARGET    = templateTypes
 TEMPLATE  = app
 SOURCES  += main.cpp
 HEADERS  += basetype.h \
-           bittype.h
+            bittype.h \
+            amperetype.h
 
 #QMAKE_CXXFLAGS += -fprofile-instr-generate -fcoverage-mapping
 #QMAKE_LFLAGS +=  -fprofile-instr-generate -fcoverage-mapping

@@ -44,10 +44,15 @@ using namespace std;
 void testBaseType()
 {
     //Test initializations
+    std::cout << "baseType<uint64_t> a(5);\t";
     baseType<uint64_t> a(5);
+    std::cout << "baseType<uint64_t> z;\t";
     baseType<uint64_t> z;
+    std::cout << "z = a;\t";
     z = a;
+    std::cout << "z = 5;\t";
     z = 5;
+    std::cout << "baseType<uint64_t> b(a);\t";
     baseType<uint64_t> b(a);
 
     // Test Addition and Substraction:
