@@ -18,6 +18,8 @@ namespace is = boost::units::information_speed;
 namespace bis = boost::units::information_speed::bit_sec;
 namespace bys = boost::units::information_speed::byte_sec;
 
+#define UNIT_CONVERSION(From, To) static_cast<bu::quantity<To>> (From)
+
 int main(int argc, char **argv)
 {
     int menu_int=1;
@@ -125,10 +127,13 @@ int main(int argc, char **argv)
             cout << "Please tell me you connection speed in Mbps:" << endl;
             cin >> CS_m_i;
 
-            //NOTE the si::MEBI = 2^20, which differ from si::MEGA = 10^6. Commonly mistaken conversion factors!
-            bu::quantity<bys::is> CS(CS_m_i * inf::mebi * is::bit_per_second);
+            //NOTE 1: si::MEBI = 2^20 differ from si::MEGA = 10^6. Commonly mistaken conversion factors!
+            //NOTE 2: Implicit conversion (from b/s to B/s) made by declaring
+            //         DR as B/s, but assigning the b/s unit to the user input.
+            //         Could have been done by a static_cast, as shown the the UNIT_CONVERSION macro.
+            bu::quantity<bys::is> DR(CS_m_i * inf::mebi * is::bit_per_second);
 
-            cout << bu::binary_prefix << "The work done was " << CS << "!" << endl;
+            cout << bu::binary_prefix << "Your download rate is " << DR << "!" << endl;
         }break;
 
         case 0:{
@@ -140,4 +145,6 @@ int main(int argc, char **argv)
                 break;
         }
     }
+
+    return 0;
 }

@@ -45,9 +45,9 @@ class baseType
 public:
 
     // Constructors:
-    baseType() : _value( 0 ) { std::cout << "Constructor 1" << std::endl; }
-    baseType( const baseType& t) : _value( t._value ) { std::cout << "Constructor 2" << std::endl; }
-    baseType( const T& t) : _value( t ) { std::cout << "Constructor 3" << std::endl; }
+    baseType() : _value( 0 ) {}
+    baseType( const baseType& t) : _value( t._value ) {}
+    baseType( const T& t) : _value( t ) {}
 
     // Getter function:
     T value() const

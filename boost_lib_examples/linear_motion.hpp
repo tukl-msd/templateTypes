@@ -8,6 +8,9 @@
 #include <boost/units/systems/si/io.hpp>
 #include <boost/units/systems/si/prefixes.hpp>
 
+//This is another way of implementing a function of one or more variables.
+//Still to be understood what are the pros and cons of this method.
+
 namespace bl = boost::lambda;
 namespace si = boost::units::si;
 

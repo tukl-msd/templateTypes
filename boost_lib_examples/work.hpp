@@ -3,6 +3,9 @@
 
 #include <boost/units/quantity.hpp>
 
+//This is one way of overloading a function, in this case the work done by a force or torque,
+//depending on the type of data you have.
+
 template<class System,class Y>
 boost::units::quantity<boost::units::unit<boost::units::energy_dimension,System>,Y>
 work(boost::units::quantity<boost::units::unit<boost::units::force_dimension,System>,Y> F,

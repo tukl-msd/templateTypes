@@ -4,11 +4,15 @@
 #include <boost/units/systems/si.hpp>
 #include <boost/units/systems/information.hpp>
 
+//This is an example on how to create a new dimension and unit.
+//Most probably you will never add a new base dimension.
+//New dimensions can be added to the units namespace,
+//while new units should be within its own namespace.
 
 namespace boost {
 namespace units {
 
-/// derived dimension for speed of information: INFO (dibitsmensionless) T^-1
+/// derived dimension for speed of information: INFO (dimensionless) T^-1
 typedef derived_dimension<information_base_dimension,1,
                           time_base_dimension,-1>::type information_speed_dimension;
 
