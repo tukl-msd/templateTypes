@@ -31,6 +31,7 @@
  *
  * Authors:
  *    Matthias Jung
+ *    Andr'e Lucas Chinazzo
  */
 
 #ifndef BITTYPE_H

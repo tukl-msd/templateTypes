@@ -31,6 +31,7 @@
  *
  * Authors:
  *    Matthias Jung
+ *    Andr'e Lucas Chinazzo
  */
 
 #include <iostream>
@@ -38,6 +39,9 @@
 
 #include "basetype.h"
 #include "bittype.h"
+
+
+#include "boost_lib_examples/boostExercise.h"
 
 using namespace std;
 
@@ -143,6 +147,7 @@ int main()
 {
     testBaseType();
     testBitType();
+    boostExercise();
     std::cout<< "All tests passed" << std::endl;
 }
 
