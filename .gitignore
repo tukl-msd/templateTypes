@@ -2,6 +2,7 @@
 # ----------------------------------------------------------------------------
 *.gcno
 templateTypes
+boost_lib_examples/boostExercise
 *.html
 *~
 *.autosave

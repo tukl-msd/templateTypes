@@ -31,6 +31,7 @@
  *
  * Authors:
  *    Matthias Jung
+ *    Andr'e Lucas Chinazzo
  */
 
 #ifndef BITTYPE_H
@@ -66,9 +67,13 @@ public:
        {
            return std::to_string(this->value()/(static_cast<uint64_t>(1)<<40)/8) + " TByte";
        }
-       else
+       else if(this->value() < (static_cast<uint64_t>(1)<<60)*8)
        {
-           return std::to_string(this->value()/(static_cast<uint64_t>(1)<<40)/8) + " TByte";
+           return std::to_string(this->value()/(static_cast<uint64_t>(1)<<50)/8) + " PByte";
+       }
+        else
+       {
+           return std::to_string(this->value()/(static_cast<uint64_t>(1)<<50)/8) + " PByte";
        }
     }
 
@@ -96,9 +101,13 @@ private:
         {
             os << this->value()/(static_cast<uint64_t>(1)<<40) << " Tbit";
         }
+        else if(this->value() < static_cast<uint64_t>(1)<<60)
+        {
+            os << this->value()/(static_cast<uint64_t>(1)<<50) << " Pbit";
+        }
         else
         {
-            os << this->value()/(static_cast<uint64_t>(1)<<40) << " Tbit";
+            os << this->value()/(static_cast<uint64_t>(1)<<50) << " Pbit";
         }
     }
 };

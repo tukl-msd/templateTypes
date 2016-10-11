@@ -30,6 +30,7 @@
 #
 # Authors:
 #    Matthias Jung
+#    Andr'e Lucas Chinazzo
 
 QT       -= core
 QT       -= gui
@@ -40,7 +41,13 @@ TARGET    = templateTypes
 TEMPLATE  = app
 SOURCES  += main.cpp
 HEADERS  += basetype.h \
-           bittype.h
+	    bittype.h \
+	    boost_lib_examples/boostExercise.h \
+	    boost_lib_examples/work.h \
+	    boost_lib_examples/electrical_power.h \
+	    boost_lib_examples/information_speed.h \
+	    boost_lib_examples/linear_motion.h
+
 
 #QMAKE_CXXFLAGS += -fprofile-instr-generate -fcoverage-mapping
 #QMAKE_LFLAGS +=  -fprofile-instr-generate -fcoverage-mapping
@@ -53,6 +60,7 @@ macx{
     QMAKE_LFLAGS +=  -fprofile-arcs -ftest-coverage -fPIC -O0
 }
 
+INCLUDEPATH += /home/chinazzo/libs/boost_1_62_0
 OTHER_FILES += getCov.sh
 OTHER_FILES += getCovMac.sh
 
